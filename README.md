@@ -117,4 +117,4 @@ npm install
 npm run dev
 ```
 
-[크롤링 실행 결과](./capture/크롤링완료캡처.png)
+![크롤링 실행 결과](https://github.com/EastWon0103/shinhan-javascript-assignment/blob/main/capture/%ED%81%AC%EB%A1%A4%EB%A7%81%EC%99%84%EB%A3%8C%EC%BA%A1%EC%B2%98.png?raw=true)
