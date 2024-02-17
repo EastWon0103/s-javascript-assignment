@@ -6,7 +6,7 @@
 -   웹 데이터 수집하여 저장하기
 -   Express.js를 활용해 REST API 구성하기
 
-## Detail Requirement
+## 1. Detail Requirement
 
 1. > Mongoose 모델 스키마 구성: 다음과 같이 두 개의 `Collection`을 구성
     - Campaign
@@ -30,10 +30,10 @@
     - \[조건1\]:Comment는 Campaign을 참조하도록 구성할 것
     - \[조건2\]: 대댓글은 자기자신을 참조하도록 구성할 것
 2. 웹 데이터 수집하여 저장하기
-    - [해당 와디즈 사이트](https://www.wadiz.kr/web/wreward/main?order=support)에서 캨페인과 해당하는 캠페인의 댓글을 수집하여 (1)에서 만든 스키마에 저장할 것
+    - [해당 와디즈 사이트](https://www.wadiz.kr/web/wreward/main?order=support)에서 캠페인과 해당하는 캠페인의 댓글을 수집하여 (1)에서 만든 스키마에 저장할 것
     - \[조건1\]: Campaign은 50개, 댓글은 캠페인당 40개 씩 저장할 것(단 40개 보다 작으면 해당 개수까지만 저장할 것)
 3. Express.js를 활용해 API 구성하기
-    - `(GET) /api/campaign`요청이 들ㅇ어오면 Campaign에 대한 리스트를 조회할 것
+    - `(GET) /api/campaign`요청이 들어오면 Campaign에 대한 리스트를 조회할 것
     - `(GET) /api/:campaignId`요청이 오면 Campaign 한 개에 대한 데이터와 댓글 전부를 함께 조회할 것
     - `(POST) /api/:campainId/comment` 요청이 오면 해당 Campaign에 대한 댓글을 임의로 달 수 있도록 할 것 (댓글 본문 / 유저닉네임 / ~~대댓글 깊이~~는 필수로 입력)
     - `(POST) /api/:campaignId/comment/:commentId` 요청이 달리면 해당 캠페인과 Comment에 대한 대댓글을 달 수 있도록 할 것 (댓글 본문 / 유저닉네임 / 대댓글 id와 대댓글 깊이는 필수로 입력)
@@ -59,11 +59,11 @@
 -   node_modules는 제외하여 압축
 -   최종 결과물은 `캡처이미지`와 `소스코드`가 함께 압축된 파일
 
-## Project Structure
+## 2. Project Structure
 
 ### capture
 
-과제의 캡처본을 의미 합니다.
+과제의 캡처본이 저장된 폴더입니다.
 
 ### crawler
 
@@ -71,7 +71,7 @@
 
 ### server
 
-## Tutorial
+## 3. Tutorial
 
 ### 0. 노드 및 타입스크립트 환경 준비
 
@@ -85,3 +85,5 @@
 npm install -g typescript
 npm install -g ts-node
 ```
+
+### 1.
