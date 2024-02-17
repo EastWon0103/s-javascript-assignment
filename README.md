@@ -67,6 +67,14 @@
 
 ### crawler
 
+해당 프로젝트는 와디즈에서 `캠페인`과 `댓글`을 수집하는 크롤러 입니다.  
+자세한 실행 가이드는 아래의 `Tutorial`을 참고하세요.
+
+-   src
+    -   api: api를 통해서 데이터를 수집
+    -   db: Mongo DB Setup 및 데이터 저장
+    -   index.ts: 메인 실행 파일
+
 ### front
 
 ### server
@@ -77,7 +85,9 @@
 
 [NVM(노드 환경 구성) 설치 가이드](https://jang8584.tistory.com/295)
 
-> 해당 프로젝트는 노드 `21.6.0` 버전에서 구성되었으니 참고 바랍니다.
+> 해당 프로젝트는 노드 `21.6.0` 버전에서 구성되었으니 참고 바랍니다.  
+> 해당 튜토리얼은 Mac OS 기준으로 작성되었습니다. Window에서는 명령어 등의 차이가 있을 수 있습니다.  
+> `npm update`는 하지 않습니다. (다운그레이드 한 패키지 일부 존재)
 
 타입스크립트 전역적으로 사용하기 위해 설치
 
@@ -86,4 +96,25 @@ npm install -g typescript
 npm install -g ts-node
 ```
 
-### 1.
+### 1. 크롤링 실행 - env 설정
+
+`crawler`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
+
+```
+HOST={Mongo DB Host}
+DB_NAME={DB 이름}
+USERNAME={유저네임}
+PASSWORD={패스워드}
+```
+
+### 2. 크롤링 실행
+
+프로젝트 최상단 경로에서 아래의 명령어를 실행해주세요
+
+```
+cd crawler
+npm install
+npm run dev
+```
+
+[크롤링 실행 결과](./capture/크롤링완료캡처.png)
