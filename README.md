@@ -77,10 +77,19 @@
 
 ### front
 
+해당 프로젝트는 `캠페인의 GridView(with Card)`와 `캠페인 상세 조회` 기능이 구현되어 있습니다.  
+자세한 실행 가이드는 아래의 `Tutorial`을 참고하세요.
+
+-   src
+    -   component: 컴포넌트 단위
+    -   page: 페이지
+    -   types: 타입스크립트의 공통 타입
+    -   util: 유틸성 모듈
+
 ### server
 
-해당 프로젝트는 크롤링한 데이터를 기반으로 캠페인을 조회하거나 댓글/대댓글을 업로드할 수 있는 서버입니다.  
-자세한 실행 가이드는 아래의 Tutorial을 참고하세요.
+해당 프로젝트는 크롤링한 데이터를 기반으로 `캠페인을 조회`하거나 `댓글/대댓글을 업로드`할 수 있는 서버입니다.  
+자세한 실행 가이드는 아래의 `Tutorial`을 참고하세요.
 
 -   src
     -   db: db연결 및 모델 / 스키마 정의
@@ -154,6 +163,8 @@ npm install
 npm run dev
 ```
 
+![서버 실행 결과](https://github.com/EastWon0103/shinhan-javascript-assignment/blob/main/capture/%EC%84%9C%EB%B2%84-%EC%BA%A0%ED%8E%98%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%A1%B0%ED%9A%8C.png?raw=true)
+
 ### 5. 프론트 실행 - env 설정
 
 `front`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
@@ -172,6 +183,8 @@ cd front
 npm install
 npm run dev
 ```
+
+![프론트 실행 결과](https://github.com/EastWon0103/shinhan-javascript-assignment/blob/main/capture/%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EC%A1%B0%ED%9A%8C-1.png?raw=true)
 
 ## 4. 주의 사항
 
