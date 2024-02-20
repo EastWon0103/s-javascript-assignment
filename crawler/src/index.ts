@@ -4,6 +4,8 @@ import chalk from 'chalk';
 import { getCampaignData, getCommentData } from './api/apiUtil';
 import { persistCampaigns } from './db/campaign/persistCampaigns';
 import { persistComments } from './db/comment/persistComments';
+import { Types } from 'mongoose';
+import { Campaign } from './db/campaign/campaignModel';
 
 const getErrorMessage = (error: unknown) => {
     if (error instanceof Error) return error.message;

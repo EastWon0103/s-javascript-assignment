@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+import '../db/comment/commentModel';
+import '../db/campaign/campaignModel';
+
 dotenv.config();
 
 const dbSetUp = async () => {

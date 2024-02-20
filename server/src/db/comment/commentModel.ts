@@ -3,7 +3,7 @@ import { Model, Schema, Types, model } from 'mongoose';
 interface IComment {
     body: string;
     commentType: string;
-    campaign: Number;
+    campaign: number;
     userNickname: string;
     whenCreated: Date;
     depth: number;
@@ -21,6 +21,9 @@ const commentSchema = new Schema<IComment, CommentModel>({
     whenCreated: { type: Date, default: Date.now() },
     depth: { type: Number, required: true, default: 0 },
 });
+
+commentSchema.set('toObject', { virtuals: true });
+commentSchema.set('toJSON', { virtuals: true });
 
 // 가상 필드
 commentSchema.virtual('commentReplys', {

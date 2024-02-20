@@ -79,6 +79,17 @@
 
 ### server
 
+해당 프로젝트는 크롤링한 데이터를 기반으로 캠페인을 조회하거나 댓글/대댓글을 업로드할 수 있는 서버입니다.  
+자세한 실행 가이드는 아래의 Tutorial을 참고하세요.
+
+-   src
+    -   db: db연결 및 모델 / 스키마 정의
+    -   middleware: 커스텀 미들웨어 모듈
+    -   router: 라우터 모듈, 비즈니스 로직과 연결
+    -   service: 비즈니스 로직을 처리하는 서비스 모듈
+    -   util: 유틸성 모듈
+    -   app.ts: 메인 실행 파일
+
 ## 3. Tutorial
 
 ### 0. 노드 및 타입스크립트 환경 준비
@@ -118,3 +129,59 @@ npm run dev
 ```
 
 ![크롤링 실행 결과](https://github.com/EastWon0103/shinhan-javascript-assignment/blob/main/capture/%ED%81%AC%EB%A1%A4%EB%A7%81%EC%99%84%EB%A3%8C%EC%BA%A1%EC%B2%98.png?raw=true)
+
+### 3. 서버 실행 - env 설정
+
+`server`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
+
+```
+HOST={Mongo DB Host}
+DB_NAME={DB 이름}
+USERNAME={유저네임}
+PASSWORD={패스워드}
+
+# 숫자만 들어감
+SERVER_PORT
+```
+
+### 4. 서버 실행
+
+프로젝트 최상단 경로에서 아래의 명령어를 실행해주세요
+
+```
+cd server
+npm install
+npm run dev
+```
+
+### 5. 프론트 실행 - env 설정
+
+`front`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
+
+```
+# 서버의 port 번호와 맞추어야 함
+VITE_SERVER_HOST = http://localhost:8888
+```
+
+### 6. 프론트 실행
+
+프로젝트 최상단 경로에서 아래의 명령어를 실행해주세요
+
+```
+cd front
+npm install
+npm run dev
+```
+
+## 4. 주의 사항
+
+-   기본적인 API의 `엔드포인트`와 `Request Body`값을 수정한 부분이 있습니다.
+    -   (GET) /api/campaign -> /api/campaigns
+    -   (GET) /api/:campaignId -> /api/campaigns/:campaignId
+    -   (POST) /api/:campainId/comment -> /api/campaigns/:campainId/comment & depth 제거
+    -   (POST) /api/:campaignId/comment/:commentId -> /api/campaigns/:campainId/comment/:commentId
+-   캠페인 조회 시 아이디는 `_id`가 아닌 campaignId로 진행
+-   현재 `campaign`과 `comment`는 `wadiz`에서 크롤링한 campaignId로 이어져 있음
+    -   만약 캠페인을 추가하는 서버 코드가 필요할 시, `crawler`의 `schema`도 변경해야함
+    -   변경 시 크롤러는 `campaign`을 저장 후, 도출되는 `id`로 `comment`와 매핑해야함 (기존 데이터 크롤링 -> 모두 저장)
+-   프로젝트를 3개로 분리하였기 때문에 `crawler`와 `server`의 `schema, mongo env 파일 등`을 맞춰야 함

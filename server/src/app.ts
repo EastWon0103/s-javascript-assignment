@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 import express, { Express } from 'express';
 import cors from 'cors';
 import { dbSetUp } from './db/dbSetUp';
+import mainRouter from './router/mainRouter';
+import { errorHandler } from './middleware/error/errorHandler';
 
 dotenv.config();
 const app: Express = express();
@@ -16,6 +18,10 @@ app.use(
         credentials: true,
     })
 );
+
+app.use('/api/campaigns', mainRouter);
+
+app.use(errorHandler);
 
 const SERVER_PORT = process.env.SERVER_PORT;
 app.listen(SERVER_PORT, () => {

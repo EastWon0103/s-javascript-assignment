@@ -1,6 +1,7 @@
 import { Campaign, ICampaign } from './campaignModel';
 import cliProgress from 'cli-progress';
 import chalk from 'chalk';
+import mongoose, { Types } from 'mongoose';
 
 const persistCampaigns = async (campaignResponse: CampaignComposition[]) => {
     try {
