@@ -8,7 +8,7 @@ dotenv.config();
 const dbSetUp = async () => {
     try {
         await mongoose.connect(
-            `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.HOST}/${process.env.DB_NAME}`,
+            `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}`,
             {
                 retryWrites: true,
                 w: 'majority',

@@ -121,10 +121,10 @@ npm install -g ts-node
 `crawler`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
 
 ```
-HOST={Mongo DB Host}
+DB_HOST={Mongo DB Host}
 DB_NAME={DB 이름}
-USERNAME={유저네임}
-PASSWORD={패스워드}
+DB_USERNAME={유저네임}
+DB_PASSWORD={패스워드}
 ```
 
 ### 2. 크롤링 실행
@@ -144,10 +144,10 @@ npm run dev
 `server`라는 폴더에서 `env`파일을 작성해주세요. 작성해야 할 내용은 다음과 같습니다.
 
 ```
-HOST={Mongo DB Host}
+DB_HOST={Mongo DB Host}
 DB_NAME={DB 이름}
-USERNAME={유저네임}
-PASSWORD={패스워드}
+DB_USERNAME={유저네임}
+DB_PASSWORD={패스워드}
 
 # 숫자만 들어감
 SERVER_PORT
